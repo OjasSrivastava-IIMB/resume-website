@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojas Srivastava - Resume</title>
+    <style>
+        /* 1. Import Luxury Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+        /* 2. Global Styles */
+        html { scroll-behavior: smooth; }
+        ::selection { background-color: #b59a5c; color: #ffffff; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #333333; 
+            background-color: #fcfcfc; 
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #111111;
+        }
+
+        /* 3. Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #111111; 
+            padding: 1.2rem 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows wrapping on small screens */
+            list-style-type: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover { color: #b59a5c; }
+
+        /* 4. Minimalist Header */
+        header {
+            position: relative; 
+            text-align: center;
+            padding: 6rem 2rem;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-logos {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .header-logos img {
+            width: 90px; 
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .profile-img {
+            width: 250px; 
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+
+        h1 {
+            font-size: 4.5rem; 
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            color: #555555; 
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info { font-size: 1rem; color: #666666; }
+        .contact-link {
+            color: #b59a5c; 
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        .contact-link:hover { opacity: 0.7; }
+
+        /* 5. Main Layout & Feature Sections */
+        main {
+            max-width: 900px; 
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 3.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid #eaeaea;
+            border-radius: 4px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); 
+            transition: box-shadow 0.4s ease;
+        }
+
+        section:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+
+        h3 {
+            font-size: 2rem;
+            font-style: italic;
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2.5rem;
+            display: inline-block; 
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px; 
+            height: 2px;
+            background-color: #b59a5c;
+            transition: width 0.4s ease; 
+        }
+
+        section:hover h3::after { width: 100%; }
+
+        #summary p::first-letter {
+            float: left;
+            font-size: 3.8rem;
+            line-height: 0.8;
+            font-family: 'Playfair Display', serif;
+            margin-right: 0.5rem;
+            color: #b59a5c;
+            font-weight: 700;
+        }
+
+        /* 6. Elegant Cards */
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .card {
+            padding-left: 1.5rem;
+            border-left: 2px solid #e0e0e0; 
+            transition: border-left-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover {
+            border-left: 2px solid #b59a5c; 
+            transform: translateX(4px); 
+        }
+
+        .card h4 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+
+        .meta {
+            font-family: 'Inter', sans-serif;
+            color: #777777;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .card p, .card ul { font-size: 0.95rem; color: #444444; }
+        .card ul { margin-left: 1.2rem; margin-top: 0.8rem; }
+        .card li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+
+        /* 7. Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #eaeaea;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            color: #111111;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            width: 30%;
+        }
+
+        tr:hover td, tr:hover th { background-color: #fafafa; }
+        tr:last-child td, tr:last-child th { border-bottom: none; }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: #fcfcfc;
+            color: #888888;
+            font-size: 0.85rem;
+            border-top: 1px solid #eaeaea;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================
+           8. MOBILE OPTIMIZATION (MEDIA QUERIES) 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Fix the header to center everything and scale down */
+            header { padding: 3rem 1.5rem; }
+            .header-logos {
+                position: static; /* Removes them from top right */
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            .header-logos img { width: 70px; height: 70px; }
+            .profile-img { width: 180px; height: 180px; }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 0.9rem; }
+            
+            /* Stack the nav links neatly */
+            nav ul { gap: 1rem; padding: 0 1rem; }
+            nav a { font-size: 0.8rem; }
+
+            /* Fix section padding for small screens */
+            section { padding: 2rem 1.5rem; }
+            main { margin: 2rem auto; }
+
+            /* Fix the table so it stacks vertically instead of squishing */
+            table, thead, tbody, th, td, tr { display: block; }
+            th { border-bottom: none; padding-bottom: 0.2rem; width: 100%; }
+            td { padding-top: 0; padding-bottom: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-logos">
+            <img src="iimb-logo.png" alt="IIMB Logo">
+            <img src="du-logo.png" alt="Delhi University Logo">
+        </div>
+
+        <img src="profile-photo.jpg" alt="Photograph of Ojas Srivastava" class="profile-img">
+        <h1>Ojas Srivastava</h1>
+        <h2>Finance, Consulting & Entrepreneurship</h2>
+        <p class="contact-info">
+            <a href="mailto:ojas.srivastava25@iimb.ac.in" class="contact-link">ojas.srivastava25@iimb.ac.in</a> <br> 
+            +91 9129845533 &nbsp;|&nbsp; 
+            <a href="https://www.linkedin.com/in/ojas-srivastava-167221320" target="_blank" class="contact-link">LinkedIn</a>
+        </p>
+    </header>
+
+    <main>
+        <section id="summary">
+            <h3>Summary</h3>
+            <p>Driven student pursuing a BBA at IIM Bangalore and a BA(H) in Pol & Eco at the University of Delhi. Proven track record in financial modeling, startup consulting, and full-stack development, with a strong focus on investment analysis and go-to-market strategies.</p>
+        </section>
+
+        <section id="education">
+            <h3>Education</h3>
+            <div class="card-container">
+                <div class="card">
+                    <h4>Indian Institute of Management, Bangalore</h4>
+                    <span class="meta">BBA &nbsp;|&nbsp; 2025 - 2028</span>
+                </div>
+                <div class="card">
+                    <h4>University of Delhi</h4>
+                    <span class="meta">BA(H) Pol & Eco &nbsp;|&nbsp; 2025 - 2028</span>
+                </div>
+                <div class="card">
+                    <h4>Arihant Public School, Kota</h4>
+                    <span class="meta">Class XII, CBSE &nbsp;|&nbsp; 2024</span>
+                    <p>Score: 75.2%</p>
+                </div>
+                <div class="card">
+                    <h4>City Montessori School, Lucknow</h4>
+                    <span class="meta">Class X, ICSE &nbsp;|&nbsp; 2022</span>
+                    <p>Score: 95.8%</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h3>Academic & Co-Curricular Achievements</h3>
+            <div class="card-container">
+                <div class="card">
+                    <h4>National Winner (1/1461), CM Yuva Business Plan</h4>
+                    <span class="meta">UP CM YUVA (IIM Lucknow) &nbsp;|&nbsp; 2026</span>
+                    <p>Proposed a scalable AI-enabled venture model addressing MSME capital.</p>
+                </div>
+                <div class="card">
+                    <h4>National Finalist, Marketing Strategy Competition</h4>
+                    <span class="meta">IIM INDORE &nbsp;|&nbsp; 2025</span>
+                    <p>Built a new consumer brand and designed its end-to-end marketing campaign and go-to-market strategy, presenting to a national judging panel.</p>
+                </div>
+                <div class="card">
+                    <h4>National Finalist (12/950+)</h4>
+                    <span class="meta">Grant Thornton x SRCC &nbsp;|&nbsp; 2026</span>
+                    <p>Evaluated a private equity case study, analysing financials, market structure & operational drivers to formulate an investment thesis.</p>
+                </div>
+                <div class="card">
+                    <h4>Top 5/1200+ Teams, Business Simulation</h4>
+                    <span class="meta">IIM LUCKNOW &nbsp;|&nbsp; 2025</span>
+                    <p>Developed supply chain and pricing strategy in a dynamic business simulation. Evaluated demand variability and inventory dynamics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3>Work Experience & Internships</h3>
+            <div class="card-container">
+                <div class="card">
+                    <h4>Co Founder</h4>
+                    <span class="meta">AFM Advantage &nbsp;|&nbsp; Jan 2026 - Present</span>
+                    <ul>
+                        <li>Built and deployed a full-stack exam simulation platform leveraging Vercel and Supabase.</li>
+                        <li>Spearheaded the development of interactive study resources, including specialized Notion dashboards.</li>
+                        <li>Analyzed emerging trends and algorithm shifts on YouTube and LinkedIn to drive content strategy.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Associate</h4>
+                    <span class="meta">UPFORGE CONSULTING &nbsp;|&nbsp; Nov 2025 - Present</span>
+                    <ul>
+                        <li>Led an 11-member team to deliver investment memos for 10+ industries and startup opportunities.</li>
+                        <li>Drove GTM strategy with the ex-CFO of a leading FMCG brand for an edtech initiative.</li>
+                        <li>Modeled unit economics for a D2C brand to validate LTV/CAC and deployment of ₹1.3 Cr in funding.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Analyst</h4>
+                    <span class="meta">Student Investment Club "Scoutline Capital" &nbsp;|&nbsp; Oct 2025 - Present</span>
+                    <ul>
+                        <li>Inaugurated a student-run finance initiative; led development of the website and trading dashboard.</li>
+                        <li>Built 3-statement financial models and DCF valuations for 3 NSE-listed companies.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Strategy Intern</h4>
+                    <span class="meta">THE SOLUTIONISTS &nbsp;|&nbsp; Jan 2026 - Feb 2026</span>
+                    <ul>
+                        <li>Conducted industry mapping and comprehensive company screening across 40+ firms.</li>
+                        <li>Built 5+ detailed investment research reports and strategic presentation decks.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="card-container">
+                <div class="card">
+                    <h4>Equity Research & Valuation: UTLAMC (IT DHANBAD)</h4>
+                    <span class="meta">National Finalist (Top 12/250+) &nbsp;|&nbsp; 2025</span>
+                    <p>Built a 5-year operating & valuation model for UTI Asset Management covering a ₹75.6L Cr Indian AMC industry. Performed DCF, trading comps, and sensitivity analysis.</p>
+                </div>
+                <div class="card">
+                    <h4>URBAN HELP X IIM SAMBALPUR</h4>
+                    <span class="meta">National Finalist/500+ &nbsp;|&nbsp; 2025</span>
+                    <p>Built a franchise-led GTM strategy for Urban Help, a Tier-II focused on-demand home services startup. Proposed a scalable expansion roadmap.</p>
+                </div>
+                <div class="card">
+                    <h4>YATRAFY x Indian School of Business</h4>
+                    <span class="meta">Generative AI Project &nbsp;|&nbsp; 2026</span>
+                    <p>Designed and built a Generative AI travel planning tool automating itinerary creation. Performed TAM-SAM-SOM analysis for GenAI in travel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h3>Additional Information & Skills</h3>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Valuation Methods</strong></td>
+                    <td>DCF, Comparable Company Analysis, Precedent Transactions, SOTP, Sensitivity & Scenario Analysis, WACC Estimation</td>
+                </tr>
+                <tr>
+                    <td><strong>Modelling & Tools</strong></td>
+                    <td>3-Statement Modelling, MS Office (Advanced), Financial Forecasting, Cap IQ, Python, MySQL, Bloomberg Terminal</td>
+                </tr>
+                <tr>
+                    <td><strong>Skills</strong></td>
+                    <td>Investment Analysis, Financial Statement Analysis, Market Sizing, Due Diligence, Consulting, Investment Thesis</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ojas Srivastava. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
